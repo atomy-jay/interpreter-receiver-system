@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Receiver QR Ticket</title>
+  <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="narrow">
+      <a class="brand" href="/">
+        <span class="brand-mark">IR</span>
+        <span>Interpreter Receiver</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="narrow">
+    <section class="page-head ticket">
+      <h1 class="page-title">Your receiver QR ticket</h1>
+      <p class="muted">Show this QR code at the interpretation desk.</p>
+    </section>
+
+    <div id="ticket-error" class="notice danger hidden"></div>
+
+    <section id="ticket-card" class="card ticket hidden">
+      <div id="ticket-status" class="badge available">Pre-registered</div>
+      <h2 id="event-name"></h2>
+      <p id="event-meta" class="muted"></p>
+
+      <div id="qr-code" class="qr-box"></div>
+
+      <div class="ticket-data">
+        <div class="data-cell">
+          <span>Full name</span>
+          <strong id="full-name"></strong>
+        </div>
+        <div class="data-cell">
+          <span>Member number</span>
+          <strong id="member-no"></strong>
+        </div>
+        <div class="data-cell">
+          <span>Interpretation</span>
+          <strong id="language"></strong>
+        </div>
+        <div class="data-cell">
+          <span>Receiver number</span>
+          <strong id="receiver-no">Not assigned yet</strong>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:18px">
+        Please return the receiver immediately after the event.
+      </div>
+
+      <div class="inline-actions" style="justify-content:center;margin-top:18px">
+        <button class="button" id="save-qr" type="button">Save QR image</button>
+        <button class="button secondary" id="refresh-ticket" type="button">Refresh status</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="narrow">Keep this page available on your phone.</div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script type="module" src="/assets/js/ticket.js"></script>
+</body>
+</html>
