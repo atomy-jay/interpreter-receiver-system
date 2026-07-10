@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interpreter Receiver Service</title>
+  <meta name="description" content="Pre-register, collect, and return interpreter receivers.">
+  <link rel="stylesheet" href="/assets/css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="/">
+        <span class="brand-mark">IR</span>
+        <span>Interpreter Receiver Service</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="shell">
+      <section class="hero-card">
+        <h1>Fast receiver collection with one QR code.</h1>
+        <p>Pre-register before the event, show your QR code at the interpretation desk, and collect your assigned receiver in seconds.</p>
+        <div class="actions">
+          <a class="button white" id="register-link" href="/register">Pre-register</a>
+          <a class="button ghost" style="color:white;border-color:rgba(255,255,255,.34)" id="staff-link" href="/staff">Staff access</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">Interpreter Receiver Rental System</div>
+  </footer>
+
+  <script>
+    const eventCode = new URL(location.href).searchParams.get("event");
+    if (eventCode) {
+      document.getElementById("register-link").href = `/register?event=${encodeURIComponent(eventCode)}`;
+      document.getElementById("staff-link").href = `/staff?event=${encodeURIComponent(eventCode)}`;
+    }
+  </script>
+</body>
+</html>
